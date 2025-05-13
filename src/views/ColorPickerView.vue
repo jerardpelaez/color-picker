@@ -10,9 +10,12 @@ const green = ref(128)
 const blue = ref(128)
 
 function updateRGB(channel: 'red' | 'green' | 'blue', value: number) {
-  if (channel === 'red') red.value = value
-  else if (channel === 'green') green.value = value
-  else if (channel === 'blue') blue.value = value
+  const channelMap = {
+    red: red,
+    green: green,
+    blue: blue,
+  }
+  channelMap[channel].value = value
 }
 
 function setPreset(color: { red: number; green: number; blue: number }) {
