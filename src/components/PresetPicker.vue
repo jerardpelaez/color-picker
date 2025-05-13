@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import PresetButton from './PresetButton.vue'
 const emit = defineEmits<{
-  (e: 'setPreset', color: { r: number; g: number; b: number }): void
+  (e: 'setPreset', color: { red: number; green: number; blue: number }): void
 }>()
 
 const presets = [
-  { name: 'Red', r: 255, g: 0, b: 0 },
-  { name: 'Green', r: 0, g: 255, b: 0 },
-  { name: 'Blue', r: 0, g: 0, b: 255 },
-  { name: 'Yellow', r: 255, g: 255, b: 0 },
-  { name: 'Purple', r: 128, g: 0, b: 128 },
-  { name: 'Cyan', r: 0, g: 255, b: 255 },
-  { name: 'White', r: 255, g: 255, b: 255 },
-  { name: 'Black', r: 0, g: 0, b: 0 },
+  { name: 'Red', red: 255, green: 0, blue: 0 },
+  { name: 'Green', red: 0, green: 255, blue: 0 },
+  { name: 'Blue', red: 0, green: 0, blue: 255 },
+  { name: 'Yellow', red: 255, green: 255, blue: 0 },
+  { name: 'Purple', red: 128, green: 0, blue: 128 },
+  { name: 'Cyan', red: 0, green: 255, blue: 255 },
+  { name: 'White', red: 255, green: 255, blue: 255 },
+  { name: 'Black', red: 0, green: 0, blue: 0 },
 ]
 </script>
 

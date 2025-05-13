@@ -2,11 +2,6 @@
 const prop = defineProps<{
   title: string
 }>()
-
-const emit = defineEmits<{
-  (e: 'iconClick'): void
-  (e: 'titleClick'): void
-}>()
 </script>
 
 <template>
@@ -14,7 +9,7 @@ const emit = defineEmits<{
     <div class="container-fluid">
       <div class="header-content">
         <font-awesome-icon icon="paint-roller" />
-        <h1 class="header-title" @click="emit('titleClick')">
+        <h1 class="header-title">
           {{ prop.title }}
         </h1>
       </div>

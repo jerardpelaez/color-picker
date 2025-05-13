@@ -5,20 +5,20 @@ import PresetPicker from '@/components/PresetPicker.vue'
 import RGBSliders from '@/components/RGBSliders.vue'
 import { ref } from 'vue'
 
-const r = ref(128)
-const g = ref(128)
-const b = ref(128)
+const red = ref(128)
+const green = ref(128)
+const blue = ref(128)
 
-function updateRGB(channel: 'r' | 'g' | 'b', value: number) {
-  if (channel === 'r') r.value = value
-  else if (channel === 'g') g.value = value
-  else if (channel === 'b') b.value = value
+function updateRGB(channel: 'red' | 'green' | 'blue', value: number) {
+  if (channel === 'red') red.value = value
+  else if (channel === 'green') green.value = value
+  else if (channel === 'blue') blue.value = value
 }
 
-function setPreset(color: { r: number; g: number; b: number }) {
-  r.value = color.r
-  g.value = color.g
-  b.value = color.b
+function setPreset(color: { red: number; green: number; blue: number }) {
+  red.value = color.red
+  green.value = color.green
+  blue.value = color.blue
 }
 </script>
 
@@ -26,9 +26,9 @@ function setPreset(color: { r: number; g: number; b: number }) {
   <main class="container">
     <AppHeader :title="'RGB Color Picker'"></AppHeader>
 
-    <ColorDisplay :r="r" :g="g" :b="b" />
+    <ColorDisplay :red :green :blue />
 
-    <RGBSliders :r="r" :g="g" :b="b" @update="updateRGB" />
+    <RGBSliders :red :green :blue @update="updateRGB" />
 
     <PresetPicker @setPreset="setPreset" />
   </main>

@@ -1,25 +1,31 @@
 <script setup lang="ts">
 import RGBSlider from './RGBSlider.vue'
-defineProps<{ r: number; g: number; b: number }>()
+defineProps<{ red: number; green: number; blue: number }>()
+
 const emit = defineEmits<{
-  (e: 'update', channel: 'r' | 'g' | 'b', value: number): void
+  (e: 'update', channel: 'red' | 'green' | 'blue', value: number): void
 }>()
 </script>
 
 <template>
   <div class="grid">
-    <RGBSlider label="Red" color="crimson" :value="r" @change="(val) => emit('update', 'r', val)" />
+    <RGBSlider
+      label="Red"
+      color="crimson"
+      :value="red"
+      @change="(val) => emit('update', 'red', val)"
+    />
     <RGBSlider
       label="Green"
       color="seagreen"
-      :value="g"
-      @change="(val) => emit('update', 'g', val)"
+      :value="green"
+      @change="(val) => emit('update', 'green', val)"
     />
     <RGBSlider
       label="Blue"
       color="royalblue"
-      :value="b"
-      @change="(val) => emit('update', 'b', val)"
+      :value="blue"
+      @change="(val) => emit('update', 'blue', val)"
     />
   </div>
 </template>

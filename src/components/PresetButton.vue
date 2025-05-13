@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const props = defineProps<{
   label: string
-  color: { r: number; g: number; b: number }
+  color: { red: number; green: number; blue: number }
 }>()
 
-function getTextColor({ r, g, b }: { r: number; g: number; b: number }) {
-  const brightness = (r * 299 + g * 587 + b * 114) / 1000
+function getTextColor({ red, green, blue }: { red: number; green: number; blue: number }) {
+  const brightness = (red * 299 + green * 587 + blue * 114) / 1000
   return brightness > 128 ? '#000' : '#fff'
 }
 </script>
@@ -14,7 +14,7 @@ function getTextColor({ r, g, b }: { r: number; g: number; b: number }) {
   <button
     class="preset"
     :style="{
-      backgroundColor: `rgb(${props.color.r}, ${props.color.g}, ${props.color.b})`,
+      backgroundColor: `rgb(${props.color.red}, ${props.color.green}, ${props.color.blue})`,
       color: getTextColor(color),
     }"
   >
@@ -29,5 +29,6 @@ function getTextColor({ r, g, b }: { r: number; g: number; b: number }) {
   border-radius: 0.3rem;
   font-weight: 600;
   cursor: pointer;
+  min-width: 105px;
 }
 </style>
