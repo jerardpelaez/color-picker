@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import type { RGBChannel, RGBColor } from '@/types/color'
 import RGBSlider from './RGBSlider.vue'
-defineProps<{ red: number; green: number; blue: number }>()
+
+defineProps<RGBColor>()
 
 const emit = defineEmits<{
-  (e: 'update', channel: 'red' | 'green' | 'blue', value: number): void
+  (e: 'update', channel: RGBChannel, value: number): void
 }>()
 </script>
 

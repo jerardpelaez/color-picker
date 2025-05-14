@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import type { RGBColor } from '@/types/color'
 import { computed } from 'vue'
 
-const props = defineProps<{ red: number; green: number; blue: number }>()
+const props = defineProps<RGBColor>()
 
 const isWhite = computed(() => {
   return props.red == 255 && props.green == 255 && props.blue == 255

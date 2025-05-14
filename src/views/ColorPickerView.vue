@@ -3,13 +3,14 @@ import AppHeader from '@/components/AppHeader.vue'
 import ColorDisplay from '@/components/ColorDisplay.vue'
 import PresetPicker from '@/components/PresetPicker.vue'
 import RGBSliders from '@/components/RGBSliders.vue'
+import type { RGBChannel, RGBColor } from '@/types/color'
 import { ref } from 'vue'
 
 const red = ref(128)
 const green = ref(128)
 const blue = ref(128)
 
-function updateRGB(channel: 'red' | 'green' | 'blue', value: number) {
+function updateRGB(channel: RGBChannel, value: number) {
   const channelMap = {
     red: red,
     green: green,
@@ -18,7 +19,7 @@ function updateRGB(channel: 'red' | 'green' | 'blue', value: number) {
   channelMap[channel].value = value
 }
 
-function setPreset(color: { red: number; green: number; blue: number }) {
+function setPreset(color: RGBColor) {
   red.value = color.red
   green.value = color.green
   blue.value = color.blue

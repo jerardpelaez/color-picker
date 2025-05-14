@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import type { RGBColor } from '@/types/color'
+
 const props = defineProps<{
   label: string
-  color: { red: number; green: number; blue: number }
+  color: RGBColor
 }>()
 
-function getTextColor({ red, green, blue }: { red: number; green: number; blue: number }) {
+function getTextColor({ red, green, blue }: RGBColor) {
   const brightness = (red * 299 + green * 587 + blue * 114) / 1000
   return brightness > 128 ? '#000' : '#fff'
 }

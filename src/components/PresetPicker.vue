@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import type { NamedColor, RGBColor } from '@/types/color'
 import PresetButton from './PresetButton.vue'
+
 const emit = defineEmits<{
-  (e: 'setPreset', color: { red: number; green: number; blue: number }): void
+  (e: 'setPreset', color: RGBColor): void
 }>()
 
-const presets = [
+const presets: NamedColor[] = [
   { name: 'Red', red: 255, green: 0, blue: 0 },
   { name: 'Green', red: 0, green: 255, blue: 0 },
   { name: 'Blue', red: 0, green: 0, blue: 255 },
